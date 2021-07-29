@@ -11,8 +11,16 @@ export default class AirSlot extends HTMLElement {
     }
 
     onNavigation(evt) {
+
         const { detail } = evt;
         console.log('air-slot', detail);
+
+        const { href } = detail;
+        const { hash } = detail;
+        const { text } = detail;
+
+        console.log(href, hash, text);
+        
     }
 
 }

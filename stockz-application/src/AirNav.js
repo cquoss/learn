@@ -32,7 +32,9 @@ export default class AirNav extends HTMLElement {
         console.log(target.href);
         const event = new CustomEvent('air-nav', {
             detail: {
-                uri: target.href
+                href: target.href,
+                hash: target.hash.substring(1),
+                text: target.text
             },
             bubbles: true
         });

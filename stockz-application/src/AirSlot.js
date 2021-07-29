@@ -1,4 +1,5 @@
 import AddStock from './views/AddStock.js';
+import ListStocks from './views/ListStocks.js';
 export default class AirSlot extends HTMLElement {
 
     constructor() {
@@ -22,8 +23,13 @@ export default class AirSlot extends HTMLElement {
 
         console.log(href, linkName, text);
 
-        if (linkName == 'add') {
+        if (linkName === 'add') {
             const view = new AddStock();
+            this.appendChild(view);
+        }
+
+        if (linkName === 'list') {
+            const view = new ListStocks();
             this.appendChild(view);
         }
 

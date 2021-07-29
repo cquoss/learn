@@ -6,6 +6,10 @@ class AirNav extends HTMLElement {
     }
 
     connectedCallback() {
+        this.activeLinkClass = this.getAttribute('activeLinkClass');
+        if (!this.activeLinkClass) {
+            this.activeLinkClass = 'active-link';
+        }
         const links = this.querySelectorAll("a");
         console.log(links);
         links.forEach(e => this.registerListener(e));
@@ -18,10 +22,10 @@ class AirNav extends HTMLElement {
     onLinkClicked(evt) {
         const { target } = evt;
         if (this.activeLink) {
-            this.activeLink.classList.toggle('active-link');
+            this.activeLink.classList.toggle(this.activeLinkClass);
         }
         this.activeLink = target;
-        this.activeLink.classList.toggle('active-link');
+        this.activeLink.classList.toggle(this.activeLinkClass);
         evt.preventDefault();
         console.log(target.href);
         const event = new CustomEvent('air-nav', {

@@ -16,7 +16,14 @@ class AirNav extends HTMLElement {
 
     onLinkClicked(evt) {
         evt.preventDefault();
-        console.log(evt);
+        console.log(evt.target.href);
+        const event = new CustomEvent('air-navigation', {
+            detail: {
+                uri: evt.target.href
+            }
+        });
+        console.log(event);
+        this.dispatchEvent(event);
     }
 
 }

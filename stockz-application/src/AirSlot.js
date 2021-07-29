@@ -1,13 +1,14 @@
+import AddStock from './views/AddStock.js';
 export default class AirSlot extends HTMLElement {
 
     constructor() {
         super();
-        console.log('AirSlot is created.')
+        console.trace('AirSlot created.')
     }
 
     connectedCallback() {
-        console.log('AirSlot is connected.');
         document.addEventListener('air-nav', e => this.onNavigation(e));
+        console.trace('AirSlot connected.');
     }
 
     onNavigation(evt) {
@@ -16,11 +17,16 @@ export default class AirSlot extends HTMLElement {
         console.log('air-slot', detail);
 
         const { href } = detail;
-        const { hash } = detail;
+        const { hash:linkName } = detail;
         const { text } = detail;
 
-        console.log(href, hash, text);
-        
+        console.log(href, linkName, text);
+
+        if (linkName == 'add') {
+            const view = new AddStock();
+            this.appendChild(view);
+        }
+
     }
 
 }

@@ -3,7 +3,7 @@ export default class AirNav extends HTMLElement {
     constructor() {
         super();
         this.activeLink = null;
-        console.log('AirNav is created.');
+        console.trace('AirNav created.');
     }
 
     connectedCallback() {
@@ -14,7 +14,7 @@ export default class AirNav extends HTMLElement {
         const links = this.querySelectorAll("a");
         console.log(links);
         links.forEach(e => this.registerListener(e));
-        console.log('AirNav is connected.');
+        console.trace('AirNav connected.');
     }
 
     registerListener(e) {
@@ -45,5 +45,3 @@ export default class AirNav extends HTMLElement {
 }
 
 customElements.define('air-nav', AirNav);
-
-document.body.addEventListener('air-nav', e => console.log(e.detail.uri));

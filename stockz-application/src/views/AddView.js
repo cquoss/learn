@@ -1,8 +1,8 @@
-export default class AddStock extends HTMLElement {
+export default class AddView extends HTMLElement {
 
     constructor() {
         super();
-        console.trace('AddStock created.');
+        console.trace('AddView created.');
     }
 
     connectedCallback() {
@@ -10,9 +10,9 @@ export default class AddStock extends HTMLElement {
             <input placeholder="stock"/>
             <button>Add stock</button>
         `;
-        console.trace('AddStock connected.');
+        console.trace('AddView connected.');
     }
 
 }
 
-customElements.define('add-stock', AddStock);
+customElements.define('add-view', AddView);

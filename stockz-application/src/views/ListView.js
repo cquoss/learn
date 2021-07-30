@@ -1,8 +1,8 @@
-export default class ListStocks extends HTMLElement {
+export default class ListView extends HTMLElement {
 
     constructor() {
         super();
-        console.trace('ListStocks created.');
+        console.trace('ListView created.');
     }
 
     connectedCallback() {
@@ -16,9 +16,9 @@ export default class ListStocks extends HTMLElement {
                 <h2>List Stocks</h2>
             </header>
         `;
-        console.trace('ListStocks connected.');
+        console.trace('ListView connected.');
     }
 
 }
 
-customElements.define('list-stocks', ListStocks);
+customElements.define('list-view', ListView);
